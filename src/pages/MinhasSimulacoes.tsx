@@ -448,16 +448,9 @@ export default function MinhasSimulacoes(): React.ReactElement {
                             <div className="mt-3 pt-3 border-t border-blue-200">
                               <div className="font-semibold text-blue-700 mb-1">💶 {t('mysims:detail.quotedPrice', 'Cotação obtida')}</div>
                               <div className="text-sm text-blue-700">{paymentMethodLabel}</div>
-                              <div className="font-bold text-lg text-green-700">{selectedPrice ?? '-'} <span className="text-sm font-normal text-blue-700">/ {p.periodicidadeEscolhida}</span></div>
+                              <div className="font-bold text-lg text-green-700">{selectedPrice ?? '-'} <span className="text-sm font-normal text-blue-700">/ {p.periodicidadeEscolhida} (1º recibo)</span></div>
                               {selectedFollowingPrice && selectedFollowingPrice !== selectedPrice && (
                                 <div className="text-xs text-blue-600">Recibos seguintes: {selectedFollowingPrice}</div>
-                              )}
-                              {displayedPrices && (
-                                <div className="mt-1 grid grid-cols-2 gap-x-4 text-xs text-blue-600">
-                                  {Object.entries(displayedPrices).map(([k, v]) => v ? (
-                                    <span key={k} className={p.periodicidadeEscolhida === k ? 'font-bold text-green-700' : ''}>{k}: {v}</span>
-                                  ) : null)}
-                                </div>
                               )}
                             </div>
                           )}
